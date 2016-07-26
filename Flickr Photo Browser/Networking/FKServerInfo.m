@@ -73,16 +73,16 @@ static NSString *const kApiKey                                      = @"d5c7df35
         case FKPhotoTypeThumbnail: {
 
             return [NSString stringWithFormat:@"http://farm%lu.staticflickr.com/%@/%@_%@_t_d.jpg",
-                    (unsigned long)photoModel.farm, photoModel.server,
-                    photoModel.identifier, photoModel.secret];
+                                (unsigned long)photoModel.farm, photoModel.server,
+                                                        photoModel.identifier, photoModel.secret];
         break;
         }
 
         case  FKPhotoTypeOriginal: {
 
             return [NSString stringWithFormat:@"http://farm%lu.staticflickr.com/%@/%@_%@.jpg",
-                    (unsigned long)photoModel.farm, photoModel.server,
-                    photoModel.identifier, photoModel.secret];
+                                (unsigned long)photoModel.farm, photoModel.server,
+                                                    photoModel.identifier, photoModel.secret];
 
         break;
         }

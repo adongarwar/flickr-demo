@@ -38,10 +38,11 @@
 
             dispatch_async(dispatch_get_main_queue(), ^{
 
-                if (strongSelf && strongSelf.photoModel && [strongSelf.photoModel.identifier isEqualToString:photoModel.identifier]) {
+                if (strongSelf && strongSelf.photoModel && [strongSelf.photoModel.identifier isEqualToString:photoModel.identifier] && photoModel.thumbnail) {
                     self.imageView.image = photoModel.thumbnail;
-                    [self.activityIndicatorView stopAnimating];
                 }
+
+                [self.activityIndicatorView stopAnimating];
             });
         }];
     } else {

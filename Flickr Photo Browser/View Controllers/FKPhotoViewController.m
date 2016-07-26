@@ -40,12 +40,12 @@
         [self.activityIndicatorView startAnimating];
 
         [self.photoModel getOriginalPhotoWithCompletion:^(FKPhotoModel *photoModel) {
-            if (photoModel.originalImage) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.activityIndicatorView stopAnimating];
+
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if (photoModel.originalImage)
                     self.imageView.image = photoModel.originalImage;
-                });
-            }
+                [self.activityIndicatorView stopAnimating];
+            });
         }];
     } else {
         self.imageView.image = self.photoModel.originalImage;
